@@ -1,4 +1,5 @@
 ﻿using oop_advanture.Src.Character;
+using oop_advanture.Src.Map;
 using oop_advanture.Src.Text;
 
 Text.SetLanguage(new English());
@@ -13,4 +14,6 @@ while(String.IsNullOrEmpty(name)){
 
 Player player = new(name);
 Console.WriteLine(Text.Language.Welcome, player.Name);
+
+var house = new House(player);
 
