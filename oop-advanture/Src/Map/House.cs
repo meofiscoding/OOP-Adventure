@@ -9,7 +9,7 @@ namespace oop_advanture.Src.Map
     {
         public Player Player { get; }
 
-        private readonly Random _random = new();
+        private readonly Random _random = new(1234);
 
         public int Width { get; set; }
         public int Height { get; set; }
