@@ -1,11 +1,12 @@
 using System;
 
-namespace oop_advanture.Src.Text
+namespace oop_advanture.Src.Texts
 {
     public static class Text
     {
+
         // This property will exist in the entire program
-        private static Language _language ;
+        private static Language _language;
 
         // Using static getter to make sure only one instance of language could be instantiated
         public static Language Language

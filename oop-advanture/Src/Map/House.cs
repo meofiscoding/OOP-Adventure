@@ -11,6 +11,10 @@ namespace oop_advanture.Src.Map
 
         private readonly Random _random = new();
 
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public Room[] Rooms { get; private set; }
+
         public House(Player player)
         {
             Player = player;

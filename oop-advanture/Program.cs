@@ -7,7 +7,8 @@ Console.WriteLine(Text.Language.ChooseYourName);
 
 var name = Console.ReadLine();
 
-while(String.IsNullOrEmpty(name)){
+while (String.IsNullOrEmpty(name))
+{
     Console.WriteLine(Text.Language.ChooseYourNameAgain);
     name = Console.ReadLine();
 }

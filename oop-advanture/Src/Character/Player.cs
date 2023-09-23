@@ -1,4 +1,5 @@
 using System;
+using oop_advanture.Src.Text;
 
 namespace oop_advanture.Src.Character
 {
