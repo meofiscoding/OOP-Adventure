@@ -19,7 +19,10 @@ while (String.IsNullOrEmpty(name))
 
 // Welcome
 Player player = new(name);
+// write welcome and set color of text to blue
+Console.ForegroundColor = ConsoleColor.Blue;
 Console.WriteLine(Text.Language.Welcome, player.Name);
+Console.ResetColor();
 
 // Create house and room
 var house = new House(player);
@@ -29,12 +32,14 @@ house.CreateRoom(3, 3);
 PlayerAction.Instance.RegisterAction(new Go(house));
 house.GotoStartingRoom();
 
+// Init room
 Room? newRoom = null;
 if (newRoom != house.CurrentRoom)
 {
     newRoom = house.CurrentRoom;
     Console.WriteLine(house.CurrentRoom.ToString());
 }
+
 // Selected Action
 int selectedActionIndex = (int)ActionType.Go;
 // Selected Direction
@@ -43,14 +48,18 @@ int selectionDirectionIndex = (int)Direction.North;
 while (selectedActionIndex != (int)ActionType.Quit)
 {
     // Promt user to select action
+    Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine(Text.Language.SelectAnAction);
     Console.WriteLine(Text.Language.GuildHelper);
+    Console.ResetColor();
     selectedActionIndex = Helper.DisplayMenuOption(selectedActionIndex, Text.Language.Actions);
     switch (selectedActionIndex)
     {
         case (int)ActionType.Go:
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(Text.Language.SelectDirection);
             Console.WriteLine(Text.Language.GuildHelper);
+            Console.ResetColor();
             selectionDirectionIndex = Helper.DisplayMenuOption(selectionDirectionIndex, Text.Language.Directions);
             PlayerAction.Instance.Execute(new List<int> { selectedActionIndex, selectionDirectionIndex });
             break;
