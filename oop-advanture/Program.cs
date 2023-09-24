@@ -20,9 +20,15 @@ while (String.IsNullOrEmpty(name))
 // Welcome
 Player player = new(name);
 Console.WriteLine(Text.Language.Welcome, player.Name);
+
+// Create house and room
 var house = new House(player);
+house.CreateRoom(3, 3);
+
 //Register actions
 PlayerAction.Instance.RegisterAction(new Go(house));
+house.GotoStartingRoom();
+
 Room? newRoom = null;
 if (newRoom != house.CurrentRoom)
 {
@@ -46,7 +52,7 @@ while (selectedActionIndex != (int)ActionType.Quit)
             Console.WriteLine(Text.Language.SelectDirection);
             Console.WriteLine(Text.Language.GuildHelper);
             selectionDirectionIndex = Helper.DisplayMenuOption(selectionDirectionIndex, Text.Language.Directions);
-
+            PlayerAction.Instance.Execute(new List<int> { selectedActionIndex, selectionDirectionIndex });
             break;
     }
 }

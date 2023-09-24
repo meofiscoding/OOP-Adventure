@@ -12,7 +12,7 @@ namespace oop_advanture.Src.Map
         }
 
         // Using node structure to create room
-        private void CreateRoom(int width, int height)
+        public void CreateRoom(int width, int height)
         {
             var total = width * height;
             // Create room
@@ -24,6 +24,22 @@ namespace oop_advanture.Src.Map
                 var col = i % Width;
                 var row = i / Width;
                 tmpRoom.Name = String.Format(Text.Language.DefaultRoomName, i, col, row);
+
+                // Calculate neighbor room index
+                if(col < Width - 1){
+                    tmpRoom.Neighbors[Direction.East] = CalculateRoomIndex(col + 1, row);
+                }
+                // col > 0 && col > Width - 1
+                if(col > 0){
+                    tmpRoom.Neighbors[Direction.West] = CalculateRoomIndex(col - 1, row);
+                }
+                if(row < Height - 1){
+                    tmpRoom.Neighbors[Direction.South] = CalculateRoomIndex(col, row + 1);
+                }
+                if(row > 0){
+                    tmpRoom.Neighbors[Direction.North] = CalculateRoomIndex(col, row - 1);
+                }
+                Rooms[i] = tmpRoom;
             }
         }
     }

@@ -1,4 +1,5 @@
 using System;
+using oop_advanture.Src.Texts;
 
 namespace oop_advanture.Src.Actions
 {
@@ -25,5 +26,14 @@ namespace oop_advanture.Src.Actions
             _registeredActions[action.Name] = action;
         }
 
+        public void Execute(List<int> args){
+            var action = (ActionType)args[0];
+            if(_registeredActions.TryGetValue(action, out var value))
+            {
+                value.Execute(args);
+            }else{
+                Console.WriteLine(Text.Language.ActionNotFound);
+            }
+        }
     }
 }

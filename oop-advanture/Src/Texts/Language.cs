@@ -16,6 +16,7 @@ namespace oop_advanture.Src.Texts
         public string GuildHelper { get; set; } = "";
         public string SelectDirection { get; set; } = "";
         public string GoError { get; set; } = "";
+        public string ActionNotFound { get; set; } = "";
         public Dictionary<ActionType, string> Actions { get; set; } = new();
         public Dictionary<Direction, string> Directions { get; set; } = new();
     }
