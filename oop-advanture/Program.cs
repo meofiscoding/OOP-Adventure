@@ -40,11 +40,11 @@ int selectedActionIndex = (int)ActionType.Go;
 // Selected Direction
 int selectionDirectionIndex = (int)Direction.North;
 
-// Promt user to select action
-Console.WriteLine(Text.Language.SelectAnAction);
-Console.WriteLine(Text.Language.GuildHelper);
 while (selectedActionIndex != (int)ActionType.Quit)
 {
+    // Promt user to select action
+    Console.WriteLine(Text.Language.SelectAnAction);
+    Console.WriteLine(Text.Language.GuildHelper);
     selectedActionIndex = Helper.DisplayMenuOption(selectedActionIndex, Text.Language.Actions);
     switch (selectedActionIndex)
     {
