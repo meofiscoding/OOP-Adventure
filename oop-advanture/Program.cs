@@ -20,7 +20,15 @@ while (String.IsNullOrEmpty(name))
 // Welcome
 Player player = new(name);
 Console.WriteLine(Text.Language.Welcome, player.Name);
-
+var house = new House(player);
+//Register actions
+PlayerAction.Instance.RegisterAction(new Go(house));
+Room? newRoom = null;
+if (newRoom != house.CurrentRoom)
+{
+    newRoom = house.CurrentRoom;
+    Console.WriteLine(house.CurrentRoom.ToString());
+}
 // Selected Action
 int selectedActionIndex = (int)ActionType.Go;
 // Selected Direction
@@ -29,20 +37,16 @@ int selectionDirectionIndex = (int)Direction.North;
 // Promt user to select action
 Console.WriteLine(Text.Language.SelectAnAction);
 Console.WriteLine(Text.Language.GuildHelper);
-selectedActionIndex = Helper.DisplayMenuOption(selectedActionIndex, Text.Language.Actions);
-
-switch (selectedActionIndex)
+while (selectedActionIndex != (int)ActionType.Quit)
 {
-    case (int)ActionType.Go:
-        Console.WriteLine(Text.Language.SelectDirection);
-        Console.WriteLine(Text.Language.GuildHelper);
-        selectionDirectionIndex = Helper.DisplayMenuOption(selectionDirectionIndex, Text.Language.Directions);
-        break;
-    case (int)ActionType.Quit:
-        Environment.Exit(0);
-        break;
-}
+    selectedActionIndex = Helper.DisplayMenuOption(selectedActionIndex, Text.Language.Actions);
+    switch (selectedActionIndex)
+    {
+        case (int)ActionType.Go:
+            Console.WriteLine(Text.Language.SelectDirection);
+            Console.WriteLine(Text.Language.GuildHelper);
+            selectionDirectionIndex = Helper.DisplayMenuOption(selectionDirectionIndex, Text.Language.Directions);
 
-var house = new House(player);
-//Register actions
-PlayerAction.Instance.RegisterAction(new Go(house));
+            break;
+    }
+}
