@@ -1,4 +1,5 @@
 using System;
+using oop_advanture.Src.Actions;
 
 namespace oop_advanture.Src.Texts
 {
@@ -10,5 +11,8 @@ namespace oop_advanture.Src.Texts
         public string ChooseYourNameAgain { get; protected set; } = "";
         public string DefaultRoomName { get; protected set; } = "";
         public string DefaultRoomDescriptions { get; protected set; } = "";
+        public string SelectAnAction { get; set; } = "";
+        public string InvalidAction { get; set; } = "";
+        public Dictionary<ActionType, string> Actions { get; set; } = new();
     }
 }

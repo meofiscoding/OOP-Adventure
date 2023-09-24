@@ -22,7 +22,10 @@ namespace oop_advanture.Src.Actions
 
         public void RegisterAction(Action action)
         {
-            _registeredActions.Add(action.Name.ToLower(), action);
+            var name = action.Name.ToLower();
+            _registeredActions[name] = action;
         }
-     }
+
+        
+    }
 }
