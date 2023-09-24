@@ -1,5 +1,6 @@
 using System;
 using oop_advanture.Src.Actions;
+using oop_advanture.Src.Map;
 
 namespace oop_advanture.Src.Texts
 {
@@ -12,7 +13,10 @@ namespace oop_advanture.Src.Texts
         public string DefaultRoomName { get; protected set; } = "";
         public string DefaultRoomDescriptions { get; protected set; } = "";
         public string SelectAnAction { get; set; } = "";
-        public string InvalidAction { get; set; } = "";
+        public string GuildHelper { get; set; } = "";
+        public string SelectDirection { get; set; } = "";
+        public string GoError { get; set; } = "";
         public Dictionary<ActionType, string> Actions { get; set; } = new();
+        public Dictionary<Direction, string> Directions { get; set; } = new();
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using oop_advanture.Src.Actions;
+using oop_advanture.Src.Map;
 
 namespace oop_advanture.Src.Texts
 {
@@ -15,12 +16,15 @@ namespace oop_advanture.Src.Texts
             // Room description with {0} is direction you are able to move based on the room that you're in
             DefaultRoomDescriptions = "You are in room with door to the {0}.";
             SelectAnAction = "Use arrow key to select an action below: ";
-            InvalidAction = "Invalid action, please try again!";
-            Actions = new Dictionary<ActionType, string>
-            {
-                {ActionType.Go, "Go"},
-                {ActionType.Quit, "Quit"},
-            };
+            GoError = "You can't go that way!";
+            SelectDirection = "Choose direction to go: ";
+            GuildHelper = "You can use arrow key to select an action and press enter to confirm...";
+            Directions = Enum.GetValues(typeof(Direction))
+                .Cast<Direction>()
+                .ToDictionary(t => t, t => t.ToString());
+            Actions = Enum.GetValues(typeof(ActionType))
+                .Cast<ActionType>()
+                .ToDictionary(t => t, t => t.ToString());
         }
     }
 }

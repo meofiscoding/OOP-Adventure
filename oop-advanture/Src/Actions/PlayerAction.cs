@@ -14,7 +14,7 @@ namespace oop_advanture.Src.Actions
             }
         }
 
-        private readonly Dictionary<string, Action> _registeredActions = new();
+        private readonly Dictionary<ActionType, Action> _registeredActions = new();
 
         private PlayerAction()
         {
@@ -22,10 +22,8 @@ namespace oop_advanture.Src.Actions
 
         public void RegisterAction(Action action)
         {
-            var name = action.Name.ToLower();
-            _registeredActions[name] = action;
+            _registeredActions[action.Name] = action;
         }
 
-        
     }
 }
