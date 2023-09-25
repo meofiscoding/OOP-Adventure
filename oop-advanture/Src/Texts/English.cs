@@ -20,6 +20,11 @@ namespace oop_advanture.Src.Texts
             SelectDirection = "Choose direction to go: ";
             GuildHelper = "You can use arrow key to select an action and press enter to confirm...";
             ActionNotFound = "Action not found!";
+            RoomOld = "You had returned to {0}.";
+            RoomNew = "You are in {0}.";
+            And = "and";
+            Comma = ",";
+            Space = " ";
             Directions = Enum.GetValues(typeof(Direction))
                 .Cast<Direction>()
                 .ToDictionary(t => t, t => t.ToString());

@@ -1,4 +1,5 @@
 using System;
+using System.Text;
 using oop_advanture.Src.Texts;
 
 namespace oop_advanture.Src.Map
@@ -18,5 +19,25 @@ namespace oop_advanture.Src.Map
         };
 
         public bool IsVisited { get; set; }
+
+        public override string ToString()
+        {
+            var sb = new StringBuilder();
+            if(IsVisited){
+                sb.AppendFormat(Text.Language.RoomOld, Name);
+            }else{
+                sb.AppendFormat(Text.Language.RoomNew, Name);
+            }
+
+            var directions = Enum.GetValues(typeof(Direction))
+                .Cast<Direction>()
+                .Where(t => Neighbors[t] != -1)
+                .Select(t => Text.Language.Directions[t])
+                .ToList();
+
+            var description = string.Format(Description, Text.Language.Join(directions, Text.Language.And));
+            sb.Append(description);
+            return sb.ToString();
+        }
     }
 }
