@@ -46,6 +46,9 @@ namespace oop_advanture.Src.Texts
             TakeError = "There is nothing to take.";
             CantTakeDescription = "You can not take {0}.";
             SelectItem = "Select item to take: ";
+            Use = "Use";
+            UseSuccess = "You have used {0}.";
+            UseError = "You can not use {0}.";
             Directions = Enum.GetValues(typeof(Direction))
                 .Cast<Direction>()
                 .ToDictionary(t => t, t => t.ToString());

@@ -1,4 +1,6 @@
 using System;
+using oop_advanture.Src.Items;
+using oop_advanture.Src.Map;
 
 namespace oop_advanture.Helper
 {
@@ -77,6 +79,26 @@ namespace oop_advanture.Helper
             {
                 Console.WriteLine($"An error occurred: {ex.Message}");
             }
+        }
+
+        public static List<Item?> GenerateItems(int numberOfItems, House house)
+        {
+            var items = new List<Item?>();
+            for (int i = 0; i < numberOfItems; i++)
+            {
+                items.Add(new Key(house));
+                // add chest which have random number of gold, each gold had random number of coin
+                int numberOfGold = new Random().Next(1, 10);
+                var gold = new List<Item>();
+                while (numberOfGold > 0)
+                {
+                    int numberOfCoin = new Random().Next(250);
+                    gold.Add(new Gold(numberOfCoin));
+                    numberOfGold--;
+                }
+                items.Add(new Chest(house, gold));
+            }
+            return items;
         }
     }
 }

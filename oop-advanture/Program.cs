@@ -33,32 +33,9 @@ var house = new House(player);
 house.CreateRoom(3, 3);
 house.DecorateRooms();
 
-// Create items
-var items = new List<Item>(){
-    new Key(house),
-    new Key(house),
-    new Key(house),
-    new Key(house),
-    new Key(house),
-    new Key(house),
-    new Key(house),
-    new Key(house),
-    new Key(house),
-    new Key(house),
-    new Key(house),
-    new Chest(house, new List<Item?>(){
-        new Gold(10),
-        new Gold(20),
-        new Gold(30),
-        new Gold(40),
-        new Gold(50),
-        new Gold(60),
-        new Gold(70),
-        new Gold(80),
-        new Gold(90),
-        new Gold(100),
-    }),
-};
+// Generate number of item key and chest equal to 60% number of rooms
+var numberOfItems = (int)Math.Round(house.Rooms.Length * 0.6);
+var items = Helper.GenerateItems(numberOfItems, house);
 
 // Populate items to rooms
 house.PopulateRooms(items);

@@ -43,6 +43,9 @@ namespace oop_advanture.Src.Texts
         public string CantTakeDescription { get; set; } = "";
         public string TookDescription { get; set; } = "";
         public string SelectItem { get; set; } = "";
+        public string Use { get; set; } = "";
+        public string UseSuccess { get; set; } = "";
+        public string UseError { get; set; } = "";
         public Dictionary<ActionType, string> Actions { get; protected set; } = new();
         public Dictionary<Direction, string> Directions { get; protected set; } = new();
         public List<string> RoomDescriptions { get; protected set; } = new();
