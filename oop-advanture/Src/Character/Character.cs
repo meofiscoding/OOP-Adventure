@@ -6,7 +6,7 @@ namespace oop_advanture.Src.Character
     {
         public string Name { get; set; }
 
-        public Character(string name)
+        protected Character(string name)
         {
             Name = name;
         }

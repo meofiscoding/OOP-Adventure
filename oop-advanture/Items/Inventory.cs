@@ -1,11 +1,14 @@
 using System;
+using oop_advanture.Src.Texts;
 
 namespace oop_advanture.Items
 {
-    public class Inventory
+    public class Inventory : IInventory
     {
         private List<Item> Items { get; } = new();
         public int Total => Items.Count;
+
+        public List<string> InventoryItems => Items.ConvertAll(item => item.Name);
 
         public void Add(Item item)
         {
@@ -17,11 +20,13 @@ namespace oop_advanture.Items
             Items.Remove(item);
         }
 
-        public Item? Find(string itemName){
+        public Item? Find(string itemName)
+        {
             return Items.Find(item => item.Name == itemName);
         }
 
-        public Item? Find(string itemName, bool remove){
+        public Item? Find(string itemName, bool remove)
+        {
             var item = Find(itemName);
             if (remove && item != null)
             {
@@ -30,15 +35,18 @@ namespace oop_advanture.Items
             return item;
         }
 
-        public bool Contains(string itemName){
+        public bool Contains(string itemName)
+        {
             return Find(itemName) != null;
         }
 
-        public Item? Take(string itemName){
+        public Item? Take(string itemName)
+        {
             return Find(itemName, true);
         }
 
-        public void Use (string itemName, string source){
+        public void Use(string itemName, string source)
+        {
             var item = Find(itemName);
             if (item != null)
             {
@@ -50,6 +58,7 @@ namespace oop_advanture.Items
 
                 return;
             }
+            Console.WriteLine(Text.Language.ItemNotFound, itemName);
         }
     }
 }

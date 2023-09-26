@@ -1,11 +1,13 @@
 using System;
 using System.Text;
+using oop_advanture.Items;
 using oop_advanture.Src.Texts;
 
 namespace oop_advanture.Src.Map
 {
-    public class Room
+    public class Room : IInventory
     {
+        private readonly IInventory _inventory = new Inventory();
         public string Name { get; set; } = Text.Language.DefaultRoomName;
         public string Description { get; set; } = Text.Language.DefaultRoomDescriptions;
 
@@ -19,6 +21,10 @@ namespace oop_advanture.Src.Map
         };
 
         public bool IsVisited { get; set; }
+
+        public int Total => _inventory.Total;
+
+        public List<string> InventoryItems => _inventory.InventoryItems;
 
         public override string ToString()
         {
@@ -38,6 +44,41 @@ namespace oop_advanture.Src.Map
             var description = string.Format(Description, Text.Language.Join(directions, Text.Language.And));
             sb.Append(description);
             return sb.ToString();
+        }
+
+        public void Add(Item item)
+        {
+            _inventory.Add(item);
+        }
+
+        public bool Contains(string itemName)
+        {
+            return _inventory.Contains(itemName);
+        }
+
+        public Item? Find(string itemName)
+        {
+            return _inventory.Find(itemName);
+        }
+
+        public Item? Find(string itemName, bool remove)
+        {
+            return _inventory.Find(itemName, remove);
+        }
+
+        public void Remove(Item item)
+        {
+            _inventory.Remove(item);
+        }
+
+        public Item? Take(string itemName)
+        {
+            return _inventory.Take(itemName);
+        }
+
+        public void Use(string itemName, string source)
+        {
+            _inventory.Use(itemName, source);
         }
     }
 }
