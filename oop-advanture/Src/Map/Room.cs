@@ -29,9 +29,12 @@ namespace oop_advanture.Src.Map
         public override string ToString()
         {
             var sb = new StringBuilder();
-            if(IsVisited){
+            if (IsVisited)
+            {
                 sb.AppendFormat(Text.Language.RoomOld, Name);
-            }else{
+            }
+            else
+            {
                 sb.AppendFormat(Text.Language.RoomNew, Name);
             }
 
@@ -43,6 +46,16 @@ namespace oop_advanture.Src.Map
 
             var description = string.Format(Description, Text.Language.Join(directions, Text.Language.And));
             sb.Append(description);
+
+            // Display all items exist in the room 
+            if (_inventory.Total > 0)
+            {
+            var items = _inventory.InventoryItems;
+                var pluralPre = items.Count > 1 ? Text.Language.Are : Text.Language.Is;
+                var pluralPost = items.Count > 1 ? Text.Language.Plural : "";
+                sb.AppendFormat(Text.Language.TotalItems, pluralPre, items.Count, pluralPost);
+                sb.Append(Text.Language.Join(items, Text.Language.And)).Append('.');
+            }
             return sb.ToString();
         }
 

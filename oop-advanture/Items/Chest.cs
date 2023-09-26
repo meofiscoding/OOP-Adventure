@@ -13,7 +13,7 @@ namespace oop_advanture.Items
         public override string Name => Text.Language.Chest;
         public static bool IsLocked => true;
 
-        public Chest(House house, Item?[] items)
+        public Chest(House house, List<Item?> items)
         {
             // Avoid player from accidentally take item from the room
             CanTake = false;

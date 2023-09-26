@@ -1,4 +1,5 @@
 ﻿using oop_advanture.Helper;
+using oop_advanture.Items;
 using oop_advanture.Src.Actions;
 using oop_advanture.Src.Character;
 using oop_advanture.Src.Map;
@@ -31,6 +32,26 @@ Console.ResetColor();
 var house = new House(player);
 house.CreateRoom(3, 3);
 house.DecorateRooms();
+
+// Create items
+var items = new List<Item>(){
+    new Key(house),
+    new Chest(house, new List<Item?>(){
+        new Gold(10),
+        new Gold(20),
+        new Gold(30),
+        new Gold(40),
+        new Gold(50),
+        new Gold(60),
+        new Gold(70),
+        new Gold(80),
+        new Gold(90),
+        new Gold(100),
+    }),
+};
+
+// Populate items to rooms
+house.PopulateRooms(items);
 
 //Register actions
 PlayerAction.Instance.RegisterAction(new Go(house));

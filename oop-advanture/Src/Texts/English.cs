@@ -37,6 +37,10 @@ namespace oop_advanture.Src.Texts
             Gold = "{0} gold {1}";
             Coin = "coin";
             Coins = "coins";
+            Plural = "s";
+            Is = "is";
+            Are = "are";
+            TotalItems = "\n There {0} {1} item{2} in the room: ";
             Directions = Enum.GetValues(typeof(Direction))
                 .Cast<Direction>()
                 .ToDictionary(t => t, t => t.ToString());
