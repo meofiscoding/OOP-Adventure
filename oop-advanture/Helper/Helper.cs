@@ -100,5 +100,58 @@ namespace oop_advanture.Helper
             }
             return items;
         }
+
+        public static void RoomsVisualization(int highlightRow, int highlightCol)
+        {
+            int boardSize = 3;
+
+            for (int row = 0; row <= boardSize; row++)
+            {
+                // Row
+                for (int col = 0; col <= boardSize * 2; col++)
+                {
+                    if ((highlightRow == row || highlightRow == row - 1) && col >= highlightCol * 3 - 1 && col <= highlightCol * 3 + 1)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red; // Highlight color (you can change this)
+                    }
+                    if (col % 2 == 0)
+                    {
+                        Console.Write("+");
+                    }
+                    else
+                    {
+                        Console.Write(new string('-', 5));
+                    }
+                    Console.ResetColor(); // Reset color
+                }
+
+                // Col
+                Console.WriteLine();
+                int cellHeight = 2;
+
+                while (cellHeight > 0 && row != boardSize)
+                {
+                    for (int col = 0; col <= boardSize; col++)
+                    {
+                        if (row == highlightRow && (highlightCol == col || highlightCol == col - 1))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red; // Highlight color (you can change this)
+                        }
+                        Console.Write("|");
+                        Console.ResetColor(); // Reset color
+                        if (col != boardSize)
+                        {
+                            Console.Write(new string(' ', 5));
+                        }
+                        else
+                        {
+                            Console.WriteLine();
+                        }
+                    }
+                    cellHeight--;
+                }
+            }
+        }
+
     }
 }

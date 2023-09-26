@@ -43,6 +43,9 @@ house.PopulateRooms(items);
 //Register actions
 PlayerAction.Instance.RegisterAction(new Go(house));
 house.GotoStartingRoom();
+int highlightedRow = 0; // Change these values to highlight a specific cell
+int highlightedCol = 1; // Change these values to highlight a specific cell
+Helper.RoomsVisualization(highlightedRow, highlightedCol);
 PlayerAction.Instance.RegisterAction(new Backpack(player));
 PlayerAction.Instance.RegisterAction(new Take(house));
 PlayerAction.Instance.RegisterAction(new Use(house));
