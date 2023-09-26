@@ -30,6 +30,7 @@ Console.ResetColor();
 // Create house and room
 var house = new House(player);
 house.CreateRoom(3, 3);
+house.DecorateRooms();
 
 //Register actions
 PlayerAction.Instance.RegisterAction(new Go(house));

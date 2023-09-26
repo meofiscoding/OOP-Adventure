@@ -12,17 +12,18 @@ namespace oop_advanture.Src.Texts
         public string ChooseYourNameAgain { get; protected set; } = "";
         public string DefaultRoomName { get; protected set; } = "";
         public string DefaultRoomDescriptions { get; protected set; } = "";
-        public string SelectAnAction { get; set; } = "";
-        public string GuildHelper { get; set; } = "";
-        public string SelectDirection { get; set; } = "";
-        public string GoError { get; set; } = "";
-        public string ActionNotFound { get; set; } = "";
-        public string RoomOld { get; set; } = "";
-        public string RoomNew { get; set; } = "";
-        public string And { get; set; } = "";
-        public string Comma { get; set; } = "";
-        public string Space { get; set; } = "";
-        public Dictionary<ActionType, string> Actions { get; set; } = new();
-        public Dictionary<Direction, string> Directions { get; set; } = new();
+        public string SelectAnAction { get; protected set; } = "";
+        public string GuildHelper { get; protected set; } = "";
+        public string SelectDirection { get; protected set; } = "";
+        public string GoError { get; protected set; } = "";
+        public string ActionNotFound { get; protected set; } = "";
+        public string RoomOld { get; protected set; } = "";
+        public string RoomNew { get; protected set; } = "";
+        public string And { get; protected set; } = "";
+        public string Comma { get; protected set; } = "";
+        public string Space { get; protected set; } = "";
+        public Dictionary<ActionType, string> Actions { get; protected set; } = new();
+        public Dictionary<Direction, string> Directions { get; protected set; } = new();
+        public List<string> RoomDescriptions { get; protected set; } = new();
     }
 }

@@ -14,7 +14,7 @@ namespace oop_advanture.Src.Texts
             // Room name with {1} and {2} is X, Y coordinate position in grid
             DefaultRoomName = "Room {0} ({1}, {2})"; 
             // Room description with {0} is direction you are able to move based on the room that you're in
-            DefaultRoomDescriptions = "You are in room with door to the {0}.";
+            DefaultRoomDescriptions = "You are in {0} room with door to the {1}.";
             SelectAnAction = "Use arrow key to select an action below: ";
             GoError = "You can't go that way!";
             SelectDirection = "Choose direction to go: ";
@@ -31,6 +31,15 @@ namespace oop_advanture.Src.Texts
             Actions = Enum.GetValues(typeof(ActionType))
                 .Cast<ActionType>()
                 .ToDictionary(t => t, t => t.ToString());
+            RoomDescriptions = new List<string>(){
+                "normal",
+                "cold",
+                "warm",
+                "strange",
+                "dark",
+                "bright",
+                "scary"
+            };
         }
     }
 }
