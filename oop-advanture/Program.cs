@@ -20,7 +20,7 @@ while (String.IsNullOrEmpty(name))
 // Welcome
 Player player = new(name);
 // write welcome and set color of text to blue
-Console.ForegroundColor = ConsoleColor.Blue;
+Console.ForegroundColor = ConsoleColor.Yellow;
 Console.WriteLine(Text.Language.Welcome, player.Name);
 
 // Castle 
@@ -37,21 +37,22 @@ house.GotoStartingRoom();
 
 // Init room
 Room? newRoom = null;
-if (newRoom != house.CurrentRoom)
-{
-    newRoom = house.CurrentRoom;
-    Console.WriteLine(house.CurrentRoom.ToString());
-}
 
 // Selected Action
 int selectedActionIndex = (int)ActionType.Go;
 // Selected Direction
-int selectionDirectionIndex = (int)Direction.North;
+int selectionDirectionIndex = (int)Direction.None;
 
 while (selectedActionIndex != (int)ActionType.Quit)
 {
+    if (newRoom != house.CurrentRoom)
+    {
+        newRoom = house.CurrentRoom;
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        Console.WriteLine(house.CurrentRoom.ToString());
+        Console.ResetColor();
+    }
     // Promt user to select action
-    Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine(Text.Language.SelectAnAction);
     Console.WriteLine(Text.Language.GuildHelper);
     Console.ResetColor();
@@ -59,10 +60,8 @@ while (selectedActionIndex != (int)ActionType.Quit)
     switch (selectedActionIndex)
     {
         case (int)ActionType.Go:
-            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(Text.Language.SelectDirection);
             Console.WriteLine(Text.Language.GuildHelper);
-            Console.ResetColor();
             selectionDirectionIndex = Helper.DisplayMenuOption(selectionDirectionIndex, Text.Language.Directions);
             PlayerAction.Instance.Execute(new List<int> { selectedActionIndex, selectionDirectionIndex });
             break;
