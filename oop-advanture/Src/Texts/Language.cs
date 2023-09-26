@@ -40,7 +40,6 @@ namespace oop_advanture.Src.Texts
         public string TotalItems { get; set; } = "";
         public string Take { get; set; } = "";
         public string TakeError { get; set; } = "";
-        public string NotTaken { get; set; } = "";
         public string CantTakeDescription { get; set; } = "";
         public string TookDescription { get; set; } = "";
         public string SelectItem { get; set; } = "";

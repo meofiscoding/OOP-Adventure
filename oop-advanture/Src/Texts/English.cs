@@ -44,7 +44,6 @@ namespace oop_advanture.Src.Texts
             TookDescription = "You have taken {0}.";
             Take = "Take";
             TakeError = "There is nothing to take.";
-            NotTaken = "You can not take that";
             CantTakeDescription = "You can not take {0}.";
             SelectItem = "Select item to take: ";
             Directions = Enum.GetValues(typeof(Direction))
