@@ -9,7 +9,7 @@ namespace oop_advanture.Items
 
         // Determine if item had been used or not
         public bool IsSingleUse { get; set; }
-        public bool CanTake { get; set; }
+        public static bool CanTake { get; set; } = true;
 
         // Method can be override to determine logic what to do with that item
         public virtual void Use(string source)

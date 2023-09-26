@@ -28,6 +28,12 @@ namespace oop_advanture.Src.Texts
             ItemNotFound = "Item {0} not found!";
             BackpackList = "You are carrying:";
             BackpackEmpty = "You are not carrying anything.";
+            Chest = "chest";
+            Key = "key";
+            UnlockChest = "You have unlocked the chest!";
+            TakeItem = "You have taken {0}.";
+            EmptyChest = "The chest is empty.";
+            ChestFounded = "You have found {0}!";
             Directions = Enum.GetValues(typeof(Direction))
                 .Cast<Direction>()
                 .ToDictionary(t => t, t => t.ToString());

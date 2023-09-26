@@ -25,6 +25,12 @@ namespace oop_advanture.Src.Texts
         public string ItemNotFound { get; set; } = "";
         public string BackpackEmpty { get; set; } = "";
         public string BackpackList { get; set; } = "";
+        public string Chest { get; set; } = "";
+        public string Key { get; set; } = "";
+        public string UnlockChest { get; set; } = "";
+        public string TakeItem { get; set; } = "";
+        public string EmptyChest { get; set; } = "";
+        public string ChestFounded { get; set; } = "";
         public Dictionary<ActionType, string> Actions { get; protected set; } = new();
         public Dictionary<Direction, string> Directions { get; protected set; } = new();
         public List<string> RoomDescriptions { get; protected set; } = new();
