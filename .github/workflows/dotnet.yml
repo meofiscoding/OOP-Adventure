@@ -5,6 +5,8 @@ name: .NET
 
 on:
   push:
+    # specify only .cs file
+    paths: [ "oop-advanture/*.cs" ]
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
