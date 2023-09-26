@@ -25,7 +25,7 @@ namespace oop_advanture.Src.Actions
             var direction = (Direction)arg;
             // Get the index of the next room
             var nextRooomIndex = currentRoom.Neighbors[direction];
-            if (nextRooomIndex == -1 || nextRooomIndex == (int)Direction.None)
+            if (nextRooomIndex == -1 || direction == (int)Direction.None)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(Text.Language.GoError);
