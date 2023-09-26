@@ -35,6 +35,7 @@ house.DecorateRooms();
 //Register actions
 PlayerAction.Instance.RegisterAction(new Go(house));
 house.GotoStartingRoom();
+PlayerAction.Instance.RegisterAction(new Backpack(player));
 
 // Init room
 Room? newRoom = null;
@@ -65,6 +66,10 @@ while (selectedActionIndex != (int)ActionType.Quit)
             Console.WriteLine(Text.Language.GuildHelper);
             selectionDirectionIndex = Helper.DisplayMenuOption(selectionDirectionIndex, Text.Language.Directions);
             PlayerAction.Instance.Execute(new List<int> { selectedActionIndex, selectionDirectionIndex });
+            break;
+
+        case (int)ActionType.Backpack:
+            PlayerAction.Instance.Execute(new List<int> { selectedActionIndex });
             break;
     }
 }

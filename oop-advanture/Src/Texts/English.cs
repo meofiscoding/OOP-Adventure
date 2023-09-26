@@ -12,7 +12,7 @@ namespace oop_advanture.Src.Texts
             Welcome = "Hello {0}, welcome to the OOP - Adventure!";
             ChooseYourNameAgain = "Please enter your name: ";
             // Room name with {1} and {2} is X, Y coordinate position in grid
-            DefaultRoomName = "Room {0} ({1}, {2})"; 
+            DefaultRoomName = "Room {0} ({1}, {2})";
             // Room description with {0} is direction you are able to move based on the room that you're in
             DefaultRoomDescriptions = "You are in {0} room with door to the {1}.";
             SelectAnAction = "Use arrow key to select an action below: ";
@@ -26,6 +26,8 @@ namespace oop_advanture.Src.Texts
             Comma = ",";
             Space = " ";
             ItemNotFound = "Item {0} not found!";
+            BackpackList = "You are carrying:";
+            BackpackEmpty = "You are not carrying anything.";
             Directions = Enum.GetValues(typeof(Direction))
                 .Cast<Direction>()
                 .ToDictionary(t => t, t => t.ToString());
