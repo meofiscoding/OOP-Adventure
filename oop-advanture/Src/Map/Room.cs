@@ -9,6 +9,7 @@ namespace oop_advanture.Src.Map
     {
         private readonly IInventory _inventory = new Inventory();
         public string Name { get; set; } = Text.Language.DefaultRoomName;
+        public Coordinate Coordinate { get; set; } = new();
         public string Description { get; set; } = Text.Language.DefaultRoomDescriptions;
 
         // Specify how many neighbor room this room has on each direction

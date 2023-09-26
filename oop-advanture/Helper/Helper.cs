@@ -6,6 +6,8 @@ namespace oop_advanture.Helper
 {
     public static class Helper
     {
+        public const int boardSize = 3;
+
         public static int DisplayMenuOption<T>(int selectedIndex, Dictionary<T, string> options)
         {
             while (true)
@@ -103,14 +105,12 @@ namespace oop_advanture.Helper
 
         public static void RoomsVisualization(int highlightRow, int highlightCol)
         {
-            int boardSize = 3;
-
             for (int row = 0; row <= boardSize; row++)
             {
                 // Row
                 for (int col = 0; col <= boardSize * 2; col++)
                 {
-                    if ((highlightRow == row || highlightRow == row - 1) && col >= highlightCol * 3 - 1 && col <= highlightCol * 3 + 1)
+                    if ((highlightRow == row || highlightRow == row - 1) && col >= (highlightCol * 3) - 1 && col <= (highlightCol * 3) + 1)
                     {
                         Console.ForegroundColor = ConsoleColor.Red; // Highlight color (you can change this)
                     }
