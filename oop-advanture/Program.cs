@@ -76,8 +76,10 @@ while (selectedActionIndex != (int)ActionType.Quit)
     switch (selectedActionIndex)
     {
         case (int)ActionType.Go:
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine(Text.Language.SelectDirection);
             Console.WriteLine(Text.Language.GuildHelper);
+            Console.ResetColor();
             selectionDirectionIndex = Helper.DisplayMenuOption(selectionDirectionIndex, Text.Language.Directions);
             PlayerAction.Instance.Execute(new List<int> { selectedActionIndex, selectionDirectionIndex });
             break;
