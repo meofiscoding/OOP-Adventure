@@ -1,5 +1,5 @@
 using System;
-using oop_advanture.Items;
+using oop_advanture.Src.Items;
 
 namespace oop_advanture.Src.Character
 {

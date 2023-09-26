@@ -1,5 +1,6 @@
 using System;
 using oop_advanture.Src.Actions;
+using oop_advanture.Src.Items;
 using oop_advanture.Src.Map;
 
 namespace oop_advanture.Src.Texts
@@ -28,7 +29,6 @@ namespace oop_advanture.Src.Texts
         public string Chest { get; set; } = "";
         public string Key { get; set; } = "";
         public string UnlockChest { get; set; } = "";
-        public string TakeItem { get; set; } = "";
         public string EmptyChest { get; set; } = "";
         public string ChestFounded { get; set; } = "";
         public string Gold { get; set; } = "";
@@ -38,6 +38,12 @@ namespace oop_advanture.Src.Texts
         public string Is { get; set; } = "";
         public string Are { get; set; } = "";
         public string TotalItems { get; set; } = "";
+        public string Take { get; set; } = "";
+        public string TakeError { get; set; } = "";
+        public string NotTaken { get; set; } = "";
+        public string CantTakeDescription { get; set; } = "";
+        public string TookDescription { get; set; } = "";
+        public string SelectItem { get; set; } = "";
         public Dictionary<ActionType, string> Actions { get; protected set; } = new();
         public Dictionary<Direction, string> Directions { get; protected set; } = new();
         public List<string> RoomDescriptions { get; protected set; } = new();

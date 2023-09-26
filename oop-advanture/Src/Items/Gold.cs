@@ -1,7 +1,7 @@
 using System;
 using oop_advanture.Src.Texts;
 
-namespace oop_advanture.Items
+namespace oop_advanture.Src.Items
 {
     public class Gold : Item
     {

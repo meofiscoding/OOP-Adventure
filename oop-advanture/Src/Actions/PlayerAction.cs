@@ -30,7 +30,7 @@ namespace oop_advanture.Src.Actions
             var action = (ActionType)args[0];
             if(_registeredActions.TryGetValue(action, out var value))
             {
-                value.Execute(args);
+                value.Execute(args[1]);
             }else{
                 Console.WriteLine(Text.Language.ActionNotFound);
             }

@@ -1,5 +1,5 @@
 using System;
-using oop_advanture.Items;
+using oop_advanture.Src.Items;
 using oop_advanture.Src.Texts;
 
 namespace oop_advanture.Src.Actions
@@ -15,7 +15,7 @@ namespace oop_advanture.Src.Actions
 
         public override ActionType Name => ActionType.Backpack;
 
-        public override void Execute(List<int> args)
+        public override void Execute(int args)
         {
             var items = _inventory.InventoryItems;
             if(items.Count == 0)

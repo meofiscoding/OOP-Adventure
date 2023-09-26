@@ -1,6 +1,6 @@
 using System;
 using System.Text;
-using oop_advanture.Items;
+using oop_advanture.Src.Items;
 using oop_advanture.Src.Texts;
 
 namespace oop_advanture.Src.Map

@@ -17,12 +17,12 @@ namespace oop_advanture.Src.Actions
 
         // Reference action to the house to figure out where the player is
         // Check direction of the neighbor room => decide if the player can go or not
-        public override void Execute(List<int> arg)
+        public override void Execute(int arg)
         {
             // Get current room of the player
             var currentRoom = _house.CurrentRoom;
             // Get direction that the player want to go
-            var direction = (Direction)arg[1];
+            var direction = (Direction)arg;
             // Get the index of the next room
             var nextRooomIndex = currentRoom.Neighbors[direction];
             if (nextRooomIndex == -1 || nextRooomIndex == (int)Direction.None){

@@ -1,5 +1,6 @@
 using System;
 using oop_advanture.Src.Actions;
+using oop_advanture.Src.Items;
 using oop_advanture.Src.Map;
 
 namespace oop_advanture.Src.Texts
@@ -28,10 +29,9 @@ namespace oop_advanture.Src.Texts
             ItemNotFound = "Item {0} not found!";
             BackpackList = "You are carrying:";
             BackpackEmpty = "You are not carrying anything.";
-            Chest = "chest";
-            Key = "key";
+            Chest = "Chest";
+            Key = "Key";
             UnlockChest = "You have unlocked the chest!";
-            TakeItem = "You have taken {0}.";
             EmptyChest = "The chest is empty.";
             ChestFounded = "You have found {0}!";
             Gold = "{0} gold {1}";
@@ -41,6 +41,12 @@ namespace oop_advanture.Src.Texts
             Is = "is";
             Are = "are";
             TotalItems = "\n There {0} {1} item{2} in the room: ";
+            TookDescription = "You have taken {0}.";
+            Take = "Take";
+            TakeError = "There is nothing to take.";
+            NotTaken = "You can not take that";
+            CantTakeDescription = "You can not take {0}.";
+            SelectItem = "Select item to take: ";
             Directions = Enum.GetValues(typeof(Direction))
                 .Cast<Direction>()
                 .ToDictionary(t => t, t => t.ToString());

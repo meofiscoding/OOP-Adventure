@@ -2,11 +2,11 @@ using System;
 using oop_advanture.Src.Map;
 using oop_advanture.Src.Texts;
 
-namespace oop_advanture.Items
+namespace oop_advanture.Src.Items
 {
     public class Key : Item
     {
-         private readonly House _house;
+        private readonly House _house;
 
         public Key(House house)
         {

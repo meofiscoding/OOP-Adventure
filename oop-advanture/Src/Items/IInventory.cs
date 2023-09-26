@@ -1,4 +1,4 @@
-namespace oop_advanture.Items
+namespace oop_advanture.Src.Items
 {
     public interface IInventory
     {
