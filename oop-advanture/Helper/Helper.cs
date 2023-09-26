@@ -138,8 +138,13 @@ namespace oop_advanture.Helper
                             Console.ForegroundColor = ConsoleColor.Red; // Highlight color (you can change this)
                         }
                         Console.Write("|");
-                        Console.ResetColor(); // Reset color
-                        if (col != boardSize)
+                        if (row == highlightRow && highlightCol == col && cellHeight == 2)
+                        {
+                            Console.ForegroundColor = ConsoleColor.Cyan; // Highlight person
+                            Console.Write("  。 ");
+                            Console.ResetColor(); // Reset color
+                        }
+                        else if (col != boardSize)
                         {
                             Console.Write(new string(' ', 5));
                         }
@@ -147,6 +152,8 @@ namespace oop_advanture.Helper
                         {
                             Console.WriteLine();
                         }
+                        Console.ResetColor(); // Reset color
+
                     }
                     cellHeight--;
                 }
