@@ -28,6 +28,7 @@ namespace oop_advanture.Src.Actions
 
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(Text.Language.BackpackList);
+            Console.ResetColor();
             foreach (var item in items)
             {
                 Console.WriteLine(item);
