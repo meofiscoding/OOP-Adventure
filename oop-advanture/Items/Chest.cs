@@ -36,7 +36,8 @@ namespace oop_advanture.Items
             if(source == Text.Language.Key){
                 var items = InventoryItems;
                 if(IsLocked){
-                    items.Add(Text.Language.UnlockChest);
+                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                    Console.WriteLine(Text.Language.UnlockChest);
                     if(items.Count == 0){
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine(Text.Language.EmptyChest);

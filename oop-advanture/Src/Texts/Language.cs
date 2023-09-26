@@ -31,6 +31,9 @@ namespace oop_advanture.Src.Texts
         public string TakeItem { get; set; } = "";
         public string EmptyChest { get; set; } = "";
         public string ChestFounded { get; set; } = "";
+        public string Gold { get; set; } = "";
+        public string Coin { get; set; } = "";
+        public string Coins { get; set; } = "";
         public Dictionary<ActionType, string> Actions { get; protected set; } = new();
         public Dictionary<Direction, string> Directions { get; protected set; } = new();
         public List<string> RoomDescriptions { get; protected set; } = new();

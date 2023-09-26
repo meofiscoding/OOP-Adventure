@@ -34,6 +34,9 @@ namespace oop_advanture.Src.Texts
             TakeItem = "You have taken {0}.";
             EmptyChest = "The chest is empty.";
             ChestFounded = "You have found {0}!";
+            Gold = "{0} gold {1}";
+            Coin = "coin";
+            Coins = "coins";
             Directions = Enum.GetValues(typeof(Direction))
                 .Cast<Direction>()
                 .ToDictionary(t => t, t => t.ToString());
