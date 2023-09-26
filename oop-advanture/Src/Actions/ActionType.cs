@@ -7,6 +7,7 @@ namespace oop_advanture.Src.Actions
         Go,
         Take,
         Backpack,
+        Use,
         Quit
     }
 }

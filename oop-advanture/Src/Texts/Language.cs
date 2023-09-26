@@ -42,7 +42,8 @@ namespace oop_advanture.Src.Texts
         public string TakeError { get; set; } = "";
         public string CantTakeDescription { get; set; } = "";
         public string TookDescription { get; set; } = "";
-        public string SelectItem { get; set; } = "";
+        public string SelectItemToTake { get; set; } = "";
+        public string SelectItemToUse { get; set; } = "";
         public string Use { get; set; } = "";
         public string UseSuccess { get; set; } = "";
         public string UseError { get; set; } = "";

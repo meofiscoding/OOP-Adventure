@@ -45,7 +45,8 @@ namespace oop_advanture.Src.Texts
             Take = "Take";
             TakeError = "There is nothing to take.";
             CantTakeDescription = "You can not take {0}.";
-            SelectItem = "Select item to take: ";
+            SelectItemToTake = "Select item to take: ";
+            SelectItemToUse = "Select item to use: ";
             Use = "Use";
             UseSuccess = "You have used {0}.";
             UseError = "You can not use {0}.";

@@ -45,6 +45,7 @@ PlayerAction.Instance.RegisterAction(new Go(house));
 house.GotoStartingRoom();
 PlayerAction.Instance.RegisterAction(new Backpack(player));
 PlayerAction.Instance.RegisterAction(new Take(house));
+PlayerAction.Instance.RegisterAction(new Use(house));
 
 // Init room
 Room? newRoom = null;
@@ -82,16 +83,31 @@ while (selectedActionIndex != (int)ActionType.Quit)
         case (int)ActionType.Backpack:
             PlayerAction.Instance.Execute(new List<int> { selectedActionIndex, 0 });
             break;
+
         case (int)ActionType.Take:
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.WriteLine(Text.Language.SelectItem);
+            Console.WriteLine(Text.Language.SelectItemToTake);
             Console.ResetColor();
-            var availableItems = house.CurrentRoom.InventoryItems
+            var availableItemsToTake = house.CurrentRoom.InventoryItems
                 .Select(t => (ItemType)Enum.Parse(typeof(ItemType), t))
                 // add none option
                 .Append(ItemType.None)
                 .ToDictionary(t => t, t => t.ToString());
-            selectedItemIndex = Helper.DisplayMenuOption(selectedItemIndex, availableItems);
+            selectedItemIndex = Helper.DisplayMenuOption(selectedItemIndex, availableItemsToTake);
+            PlayerAction.Instance.Execute(new List<int> { selectedActionIndex, selectedItemIndex });
+            break;
+
+        case (int)ActionType.Use:
+            selectedItemIndex = (int)ItemType.None;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine(Text.Language.SelectItemToUse);
+            Console.ResetColor();
+            var availableItemsToUse = house.Player.InventoryItems
+                .Select(t => (ItemType)Enum.Parse(typeof(ItemType), t))
+                // add none option
+                .Append(ItemType.None)
+                .ToDictionary(t => t, t => t.ToString());
+            selectedItemIndex = Helper.DisplayMenuOption(selectedItemIndex, availableItemsToUse);
             PlayerAction.Instance.Execute(new List<int> { selectedActionIndex, selectedItemIndex });
             break;
     }
