@@ -22,6 +22,7 @@ namespace oop_advanture.Src.Texts
         public string And { get; protected set; } = "";
         public string Comma { get; protected set; } = "";
         public string Space { get; protected set; } = "";
+        public string ItemNotFound { get; set; } = "";
         public Dictionary<ActionType, string> Actions { get; protected set; } = new();
         public Dictionary<Direction, string> Directions { get; protected set; } = new();
         public List<string> RoomDescriptions { get; protected set; } = new();

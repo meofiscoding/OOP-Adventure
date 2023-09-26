@@ -25,6 +25,7 @@ namespace oop_advanture.Src.Texts
             And = "and";
             Comma = ",";
             Space = " ";
+            ItemNotFound = "Item {0} not found!";
             Directions = Enum.GetValues(typeof(Direction))
                 .Cast<Direction>()
                 .ToDictionary(t => t, t => t.ToString());
