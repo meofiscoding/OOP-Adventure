@@ -110,7 +110,7 @@ namespace oop_advanture.Helper
                 // Row
                 for (int col = 0; col <= boardSize * 2; col++)
                 {
-                    if ((highlightRow == row || highlightRow == row - 1) && col >= (highlightCol * 3) - 1 && col <= (highlightCol * 3) + 1)
+                    if ((highlightRow == row || highlightRow == row - 1) && col >= highlightCol * 2 && col <= (highlightCol * 2) + 2)
                     {
                         Console.ForegroundColor = ConsoleColor.Red; // Highlight color (you can change this)
                     }
